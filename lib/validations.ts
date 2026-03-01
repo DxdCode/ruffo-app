@@ -7,7 +7,7 @@ export const loginSchema = z.object({
 
 export const clientSchema = z.object({
     full_name: z.string().min(1, "El nombre es requerido"),
-    phone: z.string().min(1, "El teléfono es requerido"),
+    phone: z.string().min(1, "El teléfono es requerido").regex(/^\d{10}$/, "El teléfono debe tener 10 dígitos"),
     email: z.string().email("Email inválido").optional().or(z.literal("")),
     notes: z.string().optional(),
 })

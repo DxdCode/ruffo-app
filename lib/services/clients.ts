@@ -17,7 +17,7 @@ export async function getClients(
 
     let supabaseQuery = supabase
         .from("clients")
-        .select("id, full_name, phone, created_at, pets(count)")
+        .select("id, full_name, email, phone, created_at, pets(count)")
         .order("created_at", { ascending: false })
 
     if (query) {
