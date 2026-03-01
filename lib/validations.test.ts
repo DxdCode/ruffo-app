@@ -29,7 +29,7 @@ describe('Zod Validations', () => {
         it('Deberia validar correctamente con todos los campos requeridos', () => {
             const result = clientSchema.safeParse({
                 full_name: 'David',
-                phone: '123456789'
+                phone: '1234567890'
             })
             expect(result.success).toBe(true)
         })
@@ -37,7 +37,7 @@ describe('Zod Validations', () => {
         it('Deberia aceptar un string vacio como email', () => {
             const result = clientSchema.safeParse({
                 full_name: 'David',
-                phone: '123456789',
+                phone: '1234567890',
                 email: ''
             })
             expect(result.success).toBe(true)
@@ -46,7 +46,7 @@ describe('Zod Validations', () => {
         it('Deberia fallar si el nombre esta vacio', () => {
             const result = clientSchema.safeParse({
                 full_name: '',
-                phone: '123456789'
+                phone: '1234567890'
             })
             expect(result.success).toBe(false)
             if (!result.success) {
